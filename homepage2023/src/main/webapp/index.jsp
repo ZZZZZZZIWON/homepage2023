@@ -16,4 +16,6 @@
 <%--
 <jsp:forward page="/cmm/main/mainPage.do"/>
 --%>
-<script type="text/javaScript">document.location.href="<c:url value='/cmm/main/mainPage.do'/>"</script> 
+<script type="text/javaScript">document.location.href="<c:url value='/cmm/main/mainPage.do'/>"</script>
+
+11 
