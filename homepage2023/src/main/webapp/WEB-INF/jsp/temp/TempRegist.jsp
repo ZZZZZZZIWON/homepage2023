@@ -22,6 +22,7 @@
 	</c:choose>
 
 	<%--<form action="/temp/insert.do" method="post" name="tempVO"> --%>
+	
 	<form action="${actionUrl}" method="post" name="tempVO">
 		<input type="hidden" name="tempId" value="${result.tempId}"/> 
 		<label for="tempVal">값 정보 :</label> 

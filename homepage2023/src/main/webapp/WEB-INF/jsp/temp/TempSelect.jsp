@@ -10,6 +10,12 @@
 <meta http-equiv="Content-Language" content="ko">
 <title>데이터 가져오기</title>
 <script src="https://code.jquery.com/jquery-Latest.min.js"></script>
+<style>
+	a {
+	text-decoration-color: black;
+	text-decoration: none;
+}
+</style>
 </head>
 <body>
 	${result.tempId} : ${result.tempVal}

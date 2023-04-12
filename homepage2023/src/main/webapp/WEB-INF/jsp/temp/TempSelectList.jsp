@@ -23,6 +23,13 @@ th, td {
 	padding: 5px;
 	border: 1px solid #000;
 }
+a {
+	text-decoration-color: black;
+	text-decoration: none;
+}
+button {
+	margin: 5px;
+}
 </style>
 </head>
 <body>
@@ -36,8 +43,13 @@ th, td {
 		<tbody>
 			<c:forEach var="result" items="${resultList}">
 				<tr>
-					<td><c:out value="${result.tempId}" /></td>
-					<td><c:out value="${result.tempVal}" /></td>
+					<td><c:out value="${result.tempId}"/></td>
+					<td>
+						<c:url var="viewUrl" value="/temp/select.do">
+							<c:param name="tempId" value="${result.tempId}"/>
+						</c:url>
+						<a href="${viewUrl}"><c:out value="${result.tempVal}"/></a>	
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>
