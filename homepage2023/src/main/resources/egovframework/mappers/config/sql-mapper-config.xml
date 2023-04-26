@@ -3,7 +3,7 @@
 
 <configuration>
 	<typeAliases>
-		<typeAlias alias="egovMap" 
-				   type="egovframework.rte.psl.dataaccess.util.EgovMap" />
+		<typeAlias alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+		<typeAlias alias="tempVO" type="egovframework.let.temp.service.TempVO"/>
 	</typeAliases>
 </configuration>
