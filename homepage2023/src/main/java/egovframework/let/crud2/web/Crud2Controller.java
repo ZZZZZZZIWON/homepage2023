@@ -1,4 +1,4 @@
-package egovframework.let.crud.web;
+package egovframework.let.crud2.web;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import egovframework.rte.psl.dataaccess.util.EgovMap;
 import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 
 @Controller
-public class CrudController {
+public class Crud2Controller {
 
 	@Resource(name = "crudService")
 	private CrudService crudService;
