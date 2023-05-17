@@ -15,15 +15,15 @@ public interface BoardMapper {
 	// 게시물 목록 수
 	int selectBoardListCnt(BoardVO vo) throws Exception;
 
-	// CRUD 가져오기
+	// 게시물 가져오기
 	BoardVO selectBoard(BoardVO vo) throws Exception;
 
-	// CRUD 등록
+	// 게시물 등록
 	void insertBoard(BoardVO vo) throws Exception;
 
-	// CRUD 수정
+	// 게시물 수정
 	void updateBoard(BoardVO vo) throws Exception;
 
-	// CRUD 삭제
+	// 게시물 삭제
 	void deleteBoard(BoardVO vo) throws Exception;
 }

@@ -36,7 +36,7 @@ public class BoardServiceImpl extends EgovAbstractServiceImpl implements BoardSe
 		return boardMapper.selectBoardListCnt(vo);
 	}
 
-	// CRUD 등록하기
+	// 게시물 등록하기
 	public String insertBoard(BoardVO vo) throws Exception {
 		String id = idgenService.getNextStringId();
 		vo.setBoardId(id);

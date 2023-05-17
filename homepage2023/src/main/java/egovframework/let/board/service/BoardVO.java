@@ -182,9 +182,5 @@ public class BoardVO extends ComDefaultVO implements Serializable {
 	public void setBoardType(String boardType) {
 		this.boardType = boardType;
 	}
-
-	
-	
-	
 	
 }
