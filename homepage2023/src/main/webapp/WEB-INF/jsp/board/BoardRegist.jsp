@@ -121,6 +121,11 @@
                 $("#boardSj").focus();
                 return false;
             }
+            else if(!$("#boardCn").val()) {
+                alert("내용을 입력해주세요.");
+                $("#boardCn").focus();
+                return false;
+            }
         }
     </script>
 </body>

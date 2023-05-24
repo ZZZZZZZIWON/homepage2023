@@ -26,4 +26,7 @@ public interface BoardMapper {
 
 	// 게시물 삭제
 	void deleteBoard(BoardVO vo) throws Exception;
+
+	// 조회수 업
+	void updateViewCnt(BoardVO vo) throws Exception;
 }
