@@ -5,10 +5,13 @@
 <%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Language" content="ko">
+<meta http-equiv="Content-Language" content="ko" >
+<meta http-equiv="X-UA-Compaatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <title>수업용 게시판</title>
 <script src="https://code.jquery.com/jquery-Latest.min.js"></script>
 </head>

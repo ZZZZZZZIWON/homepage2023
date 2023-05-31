@@ -129,8 +129,30 @@
 		WHERE BOARD_ID = #{boardId}
 	</update>
 	
-	<delete id="deleteBoard" parameterType="egovframework.let.board.service.BoardVO">
-		DELETE FROM BOARD
+	<update id="updateBoard" parameterType="egovframework.let.board.service.BoardVO">
+		UPDATE BOARD SET
+			BOARD_SJ = #{boardSj}
+			, BOARD_CN = #{boardCn}
+			, NOTICE_AT = #{noticeAt}
+			,OTHBC_AT = #{othbcAt}
+			<if test="atchFileId != null and atchFileId != ''">
+			, ATCH_FILE_ID = #{atchFileId}
+			</if>	
+			, LAST_UPDT_PNTTM = NOW()
+			, LAST_UPDUSR_ID = #{userId}
 		WHERE BOARD_ID = #{boardId}
-	</delete>
+		<if test='mngAt != "Y"'>
+		 AND FRST_REGISTER_ID = #{userId}
+		</if>		
+	</update>
+	
+	<update id="deleteBoard" parameterType="egovframework.let.board.service.BoardVO">
+		UPDATE BOARD SET
+			USE_AT = 'N'
+		WHERE BOARD_ID = #{boardId}
+		<if test='mngAt != "Y"'>
+			 AND FRST_REGISTER_ID = #{userId}
+		</if>	
+	</update>
+	
 </mapper>

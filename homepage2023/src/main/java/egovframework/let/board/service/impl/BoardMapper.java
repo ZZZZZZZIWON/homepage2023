@@ -21,12 +21,13 @@ public interface BoardMapper {
 	// 게시물 등록
 	void insertBoard(BoardVO vo) throws Exception;
 
+	// 조회수 업
+	void updateViewCnt(BoardVO vo) throws Exception;
+
 	// 게시물 수정
 	void updateBoard(BoardVO vo) throws Exception;
 
 	// 게시물 삭제
 	void deleteBoard(BoardVO vo) throws Exception;
 
-	// 조회수 업
-	void updateViewCnt(BoardVO vo) throws Exception;
 }
