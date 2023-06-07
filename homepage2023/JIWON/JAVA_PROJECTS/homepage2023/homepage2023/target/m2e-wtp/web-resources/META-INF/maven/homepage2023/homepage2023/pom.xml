@@ -173,6 +173,14 @@
 			<artifactId>icu4j</artifactId>
 			<version>53.1</version>
 		</dependency>
+		
+		<!-- 썸네일 -->
+		<dependency>
+			<groupId>net.coobird</groupId>
+			<artifactId>thumbnailator</artifactId>
+			<version>0.4.2</version>
+		</dependency>
+		
 	</dependencies>
 
     <build>

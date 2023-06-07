@@ -18,101 +18,101 @@ import egovframework.rte.fdl.property.EgovPropertyService;
 
 @Component("fileMngUtil")
 public class FileMngUtil {
-
+	
 	public static final int BUFF_SIZE = 2048;
-	
-	@Resource(name = "propertiesService")
-	protected EgovPropertyService propertyService;
-	
-	@Resource(name = "egovFileIdGnrService")
-	private EgovIdGnrService idgenService;
 
-	// 첨부파일에 대한 목록 정보를 취득
-	
-	public List<FileVO> parseFileInf(Map<String, MultipartFile> files, String KeyStr, int fileKeyParam, String atchFileId, String storePath) throws Exception {
+    @Resource(name = "propertiesService")
+    protected EgovPropertyService propertyService;
+
+    @Resource(name = "egovFileIdGnrService")
+    private EgovIdGnrService idgenService;
+    
+    //첨부파일에 대한 목록 정보를 취득한다.
+    /*
+     * import
+     * - List : java.util
+     * - Iterator : java.util
+     * - Entry : java.util
+     * */
+    public List<FileVO> parseFileInf(Map<String, MultipartFile> files, String KeyStr, int fileKeyParam, String atchFileId, String storePath) throws Exception {
 		int fileKey = fileKeyParam;
 		
-		// 파일 저장 경로
+		//파일저장경로
 		String storePathString = "";
-		
-		// 첨부파일 ID
+		//첨부파일ID
 		String atchFileIdString = "";
-
-		// 파일 저장경로 여부
-		if("".equals(storePath) || storePath == null) {
-			storePathString = propertyService.getString("Globals.fileStorePath");			
+	
+		//파일 저장경로 여부
+		if ("".equals(storePath) || storePath == null) {
+		    storePathString = propertyService.getString("Globals.fileStorePath");
 		} else {
-			storePathString = propertyService.getString(storePath);
+		    storePathString = propertyService.getString(storePath);
 		}
 		
-		// 첨부파일 ID 생성 및 업데이트 여부
-		if("".equals(atchFileId) || atchFileId == null) {
-			atchFileIdString = idgenService.getNextStringId();			
+		//첨부파일ID 생성 및 업데이트 여부
+		if ("".equals(atchFileId) || atchFileId == null) {
+		    atchFileIdString = idgenService.getNextStringId();
 		} else {
-			atchFileIdString = atchFileId;
+		    atchFileIdString = atchFileId;
 		}
-	
-		// 폴더 경로 설정
+		
+		//폴더경로 설정
 		File saveFolder = new File(storePathString);
-		if(!saveFolder.exists() || saveFolder.isFile()) {
-			saveFolder.mkdirs();
+		if (!saveFolder.exists() || saveFolder.isFile()) {
+		    saveFolder.mkdirs();
 		}
-	
-		// 파일 변수
+		
+		//파일변수
 		Iterator<Entry<String, MultipartFile>> itr = files.entrySet().iterator();
 		MultipartFile file;
 		String filePath = "";
-		List<FileVO> result = new ArrayList<FileVO>();
+		List<FileVO> result  = new ArrayList<FileVO>();
 		FileVO fvo;
-		
+	
 		while (itr.hasNext()) {
-			Entry<String, MultipartFile> entry = itr.next();
-			
-			file = entry.getValue();
-			String orginFileName = file.getOriginalFilename();
-			
-			//-----------------------------
-			// 원 파일명이 없는 경우 처리
-			//	(첨부가 되지 않은 input file type)
-			//-----------------------------
-		
-			if("".equals(orginFileName)) {
-				continue;
-			}
-			
-			//-----------------------------
-			
-			// 파일 확장자 체크
-			int index = orginFileName.lastIndexOf(".");
-			String fileExt = orginFileName.substring(index + 1);
-			
-			// 저장 파일명
-			String newName = KeyStr + EgovStringUtil.getTimeStamp() + fileKey;
-			
-			// 파일 사이즈
-			long size = file.getSize();
-			
-			// 파일 저장
-			if (!"".equals(orginFileName)) {
+		    Entry<String, MultipartFile> entry = itr.next();
+	
+		    file = entry.getValue();
+		    String orginFileName = file.getOriginalFilename();
+	
+		    //--------------------------------------
+		    // 원 파일명이 없는 경우 처리
+		    // (첨부가 되지 않은 input file type)
+		    //--------------------------------------
+		    if("".equals(orginFileName)) {
+		    	continue;
+		    }
+		    ////------------------------------------
+		    
+		    //파일확장자 체크
+		    int index = orginFileName.lastIndexOf(".");
+		    String fileExt = orginFileName.substring(index + 1);
+		    
+		    //저장파일명
+		    String newName = KeyStr + EgovStringUtil.getTimeStamp() + fileKey;
+		    
+		    //파일사이즈
+		    long size = file.getSize();
+		    
+		    //파일저장
+		    if (!"".equals(orginFileName)) {
 				filePath = storePathString + File.separator + newName;
 				file.transferTo(new File(filePath));
-			}
-			fvo = new FileVO();
-			fvo.setFileExtsn(fileExt);
-			fvo.setFileStreCours(storePathString);
-			fvo.setFileMg(Long.toString(size));
-			fvo.setOrignlFileNm(orginFileName);
-			fvo.setStreFileNm(newName);
-			fvo.setAtchFileId(atchFileIdString);
-			fvo.setFileSn(String.valueOf(fileKey));
-			
-			result.add(fvo);
-			
-			fileKey++;
+		    }
+		    fvo = new FileVO();
+		    fvo.setFileExtsn(fileExt);
+		    fvo.setFileStreCours(storePathString);
+		    fvo.setFileMg(Long.toString(size));
+		    fvo.setOrignlFileNm(orginFileName);
+		    fvo.setStreFileNm(newName);
+		    fvo.setAtchFileId(atchFileIdString);
+		    fvo.setFileSn(String.valueOf(fileKey));
+	
+		    result.add(fvo);
+	
+		    fileKey++;
 		}
+	
 		return result;
-		
-	}
-
-
+    }
 }
