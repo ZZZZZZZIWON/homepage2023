@@ -1,0 +1,72 @@
+# Created by https://www.toptal.com/developers/gitignore/api/java,web
+# Edit at https://www.toptal.com/developers/gitignore?templates=java,web
+
+### Java ###
+# Compiled class file
+*.class
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+replay_pid*
+
+### Web ###
+*.asp
+*.cer
+*.csr
+*.css
+*.htm
+*.html
+*.js
+*.jsp
+*.php
+*.rss
+*.wasm
+*.wat
+*.xhtml
+
+# End of https://www.toptal.com/developers/gitignore/api/java,web
+
+# IDE 관련 파일
+.idea/
+.vscode/
+.classpath
+.project
+.settings/
+
+# 빌드 출력 파일 및 디렉토리
+/target/
+/build/
+/*.jar
+/*.war
+/*.ear
+
+# 로그 파일
+/logs/
+*.log
+
+# 환경 설정 파일
+/src/main/resources/application.properties
+
+# 임시 파일 및 디렉토리
+/tmp/
+/temp/
+
+# 의존성 관련 파일
+/lib/
+/libs/
+/node_modules/
