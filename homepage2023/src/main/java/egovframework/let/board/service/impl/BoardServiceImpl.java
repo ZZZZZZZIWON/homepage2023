@@ -22,7 +22,6 @@ public class BoardServiceImpl extends EgovAbstractServiceImpl implements BoardSe
 	@Resource(name = "boardMapper")
 	private BoardMapper boardMapper;
 	
-	
 	@Resource(name = "egovBoardIdGnrService")
 	private EgovIdGnrService idgenService;
 	

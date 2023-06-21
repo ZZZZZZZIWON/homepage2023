@@ -64,9 +64,9 @@
 						<c:import url="/cmm/fms/selectFileInfs.do" charEncoding="utf-8">
 							<c:param name="param_atchFileId" value="${result.atchFileId}"/>
 						</c:import>
-						<%-- <c:import  url="/cmm/fms/getImage.do" charEncoding="utf-8">
+						<c:import  url="/cmm/fms/getImage.do" charEncoding="utf-8">
 							<c:param name="param_atchFileId" value="${result.atchFileId}"/>
-						</c:import> --%>
+						</c:import>
 					</dd>
 				</dl>
 				<div class="view_cont">
