@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="egovframework.let.join.service.impl.JoinMapper">
+	
+	<select id="duplicateCheck" resultType="java.lang.Integer">
+		SELECT 
+		 COUNT(*) CNT
+		FROM LETTNEMPLYRINFO
+		WHERE EMPLYR_ID = #{emplyrId};
+	</select>
+	
+	<insert id="insertJoin">
+		INSERT INTO LETTNEMPLYRINFO (
+			ESNTL_ID
+			, EMPLYR_ID
+			, USER_NM 
+			, EMAIL_ADRES
+			, PASSWORD 
+			, PASSWORD_HINT 
+			, PASSWORD_CNSR 
+			, EMPLYR_STTUS_CODE  
+			, SBSCRB_DE
+		) VALUES (
+			#{esntlId}
+			, #{emplyrId}
+			, #{userNm}
+			, #{emailAdres}
+			, #{password}
+			, #{passwordHint}
+			, #{passwordCnsr}
+			, 'P'
+			, NOW()
+		)
+	</insert>
+	
+</mapper>
