@@ -79,6 +79,8 @@ public class BoardController {
 
 		LoginVO user = (LoginVO) EgovUserDetailsHelper.getAuthenticatedUser();
 		model.addAttribute("USER_INFO", user);
+		
+		System.out.println(5+7);
 
 		return "board/BoardSelectList";
 	}

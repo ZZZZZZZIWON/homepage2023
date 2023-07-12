@@ -37,7 +37,7 @@ public class JoinServiceImpl extends EgovAbstractServiceImpl implements JoinServ
 		vo.setPassword(enpassword);
 		
 		// 이메일
-		if(EgovStringUtil.isEmpty(vo.getEmailId()) && EgovStringUtil.isEmpty(vo.getEmailDomain())) {
+		if(!EgovStringUtil.isEmpty(vo.getEmailId()) && !EgovStringUtil.isEmpty(vo.getEmailDomain())) {
 			vo.setEmailAdres(vo.getEmailId() + "@" + vo.getEmailDomain());
 		}
 		joinMapper.insertJoin(vo);
