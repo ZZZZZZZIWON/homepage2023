@@ -2055,5 +2055,22 @@
 	</bean>
 	<!-- JOIN END -->
 	
+		<!-- TEST START -->
+	<bean name="egovTestIdGnrService" class="egovframework.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl"
+		destroy-method="destroy">
+		<property name="dataSource" ref="egov.dataSource" />
+		<property name="strategy" ref="testStrategy" />
+		<property name="blockSize" value="10" />
+		<property name="table" value="IDS" />
+		<property name="tableName" value="TEST_ID" />
+	</bean>
+
+	<bean name="testStrategy" class="egovframework.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl">
+		<property name="prefix" value="TEST_" />
+		<property name="cipers" value="5" />
+		<property name="fillChar" value="0" />
+	</bean>
+	<!-- TEST END -->
+	
 
 </beans>

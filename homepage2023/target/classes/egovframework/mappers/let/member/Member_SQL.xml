@@ -53,5 +53,37 @@
 			PASSWORD = #{password}
 		WHERE ESNTL_ID = #{esntlId}
 	</update>
+	
+	<select id="selectMemberList" resultType="egovMap">
+		SELECT
+			ESNTL_ID
+			, EMPLYR_ID
+			, USER_NM
+			, EMAIL_ADRES
+			, SBSCRB_DE
+		FROM LETTNEMPLYRINFO
+		WHERE EMPLYR_STTUS_CODE = 'P'
+		ORDER BY SBSCRB_DE DESC
+		LIMIT #{recordCountPerPage} OFFSET #{firstIndex}
+	</select>
+	
+	<select id="selectMemberListCnt" resultType="java.lang.Integer">
+		SELECT
+		 	COUNT(*) CNT
+	 	FROM LETTNEMPLYRINFO
+	 	WHERE EMPLYR_STTUS_CODE = 'P'
+	</select>
+	
+	<select id="selectMember" resultType="egovMap">
+		SELECT
+			ESNTL_ID
+			, EMPLYR_ID
+			, USER_NM
+			, EMAIL_ADRES
+			, SBSCRB_DE
+		FROM LETTNEMPLYRINFO
+		WHERE ESNTL_ID = #{esntlId}
+		AND EMPLYR_STTUS_CODE = 'P'
+	</select>
 		
 </mapper>

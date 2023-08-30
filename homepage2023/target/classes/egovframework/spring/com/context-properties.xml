@@ -19,7 +19,11 @@
 	    		<entry key="imagePageUnit" value="12"/>
 	    		<entry key="imagePageSize" value="10"/>
 	    		
-	        </map>
+	    		
+	    		<entry key="mail.gmailUser" value="pjw20120436@gmail.com" />
+	    		<entry key="mail.gmailUserName" value="한국폴리텍대학" />
+	    		<entry key="mail.gmailPassword" value="nuvojewlzxhirunu" />
+	    	</map>
 		</property>
 	</bean>
 </beans>	
