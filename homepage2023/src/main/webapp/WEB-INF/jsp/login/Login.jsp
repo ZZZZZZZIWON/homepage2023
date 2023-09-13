@@ -75,11 +75,10 @@ prefix="spring" uri="http://www.springframework.org/tags"%>
                   <button type="submit" class="btn-lg spot p10">로그인</button>
                   <div class="btn-cont">
                     <a href="#" class="btn-kakao" data-type="login">
-                      <img
-                        src="http://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg"
-                        width="170"
-                        alt="카카오 로그인 버튼"
-                      />
+                      <img src="http://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg" width="190" alt="카카오 로그인 버튼" />
+                    </a>
+                    <a href="${naverAuthUrl}" class="btn-naver" data-type="login">
+                      <img src="/asset/front/images/common/btn-naver.png" width="180" alt="네이버 로그인 버튼" />
                     </a>
                   </div>
                 </fieldset>
