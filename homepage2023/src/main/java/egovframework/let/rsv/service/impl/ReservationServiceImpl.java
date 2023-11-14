@@ -7,7 +7,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import egovframework.let.rsv.service.ReservationService;
-import egovframework.let.rsv.service.ReservationVO;
+import egovframework.let.rsv.web.ReservationVO;
 import egovframework.rte.fdl.idgnr.EgovIdGnrService;
 import egovframework.rte.fdl.property.EgovPropertyService;
 import egovframework.rte.psl.dataaccess.util.EgovMap;

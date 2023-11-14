@@ -2,7 +2,7 @@ package egovframework.let.rsv.service.impl;
 
 import java.util.List;
 
-import egovframework.let.rsv.service.ReservationVO;
+import egovframework.let.rsv.web.ReservationVO;
 import egovframework.rte.psl.dataaccess.mapper.Mapper;
 import egovframework.rte.psl.dataaccess.util.EgovMap;
 

@@ -1,4 +1,4 @@
-package egovframework.let.rsv.service;
+package egovframework.let.rsv.web;
 
 import java.io.Serializable;
 

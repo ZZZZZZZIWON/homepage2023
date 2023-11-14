@@ -2,6 +2,7 @@ package egovframework.let.rsv.service;
 
 import java.util.List;
 
+import egovframework.let.rsv.web.ReservationVO;
 import egovframework.rte.psl.dataaccess.util.EgovMap;
 
 public interface ReservationService {
