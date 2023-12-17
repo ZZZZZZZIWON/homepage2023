@@ -35,6 +35,7 @@
 					<div class="total">
 						총 예약수 <strong><c:out value="${fn:length(resultList)}" /></strong>건
 					</div>
+				
 					<div class="bss_list">
 						<table class="list_table">
 							<thead>

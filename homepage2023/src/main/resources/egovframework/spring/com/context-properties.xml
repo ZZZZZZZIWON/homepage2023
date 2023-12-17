@@ -1,29 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
 	<!-- 프로퍼티 정보 설정 -->
-	<bean name="propertiesService" class="egovframework.rte.fdl.property.impl.EgovPropertyServiceImpl" destroy-method="destroy">
+	<bean name="propertiesService"
+		class="egovframework.rte.fdl.property.impl.EgovPropertyServiceImpl"
+		destroy-method="destroy">
 		<property name="properties">
-	        <map>
-	        	<entry key="pageUnit" value="10"/>
-	        	<entry key="pageSize" value="10"/>
-	        	<entry key="posblAtchFileSize" value="5242880"/>
-	        	<entry key="Globals.fileStorePath" value="${Globals.File}/upload/user/file/sht/"/>
-	        	<entry key="Globals.addedOptions" value="false"/>
-	        	
-	    		<entry key="board.fileStorePath" value="${Globals.File}/upload/board/"/>
-	    		
-	    		<entry key="photoThumbWidth" value="200"/>
-	    		<entry key="photoThumbHeight" value="140"/>
-	    		<entry key="imagePageUnit" value="12"/>
-	    		<entry key="imagePageSize" value="10"/>
-	    		
-	    		
-	    		<entry key="mail.gmailUser" value="pjw20120436@gmail.com" />
-	    		<entry key="mail.gmailUserName" value="한국폴리텍대학" />
-	    		<entry key="mail.gmailPassword" value="nuvojewlzxhirunu" />
-	    	</map>
+			<map>
+				<entry key="pageUnit" value="10" />
+				<entry key="pageSize" value="10" />
+				<entry key="posblAtchFileSize" value="5242880" />
+				<entry key="Globals.fileStorePath"
+					value="${Globals.File}/upload/user/file/sht/" />
+				<entry key="Globals.addedOptions" value="false" />
+
+				<entry key="board.fileStorePath"
+					value="${Globals.File}/upload/board/" />
+
+				<entry key="photoThumbWidth" value="200" />
+				<entry key="photoThumbHeight" value="140" />
+				<entry key="imagePageUnit" value="12" />
+				<entry key="imagePageSize" value="10" />
+
+
+				<entry key="mail.gmailUser" value="pjw20120436@gmail.com" />
+				<entry key="mail.gmailUserName" value="한국폴리텍대학" />
+				<entry key="mail.gmailPassword" value="nuvojewlzxhirunu" />
+
+				<!-- 예약자 업로드 물리경로 -->
+				<entry key="rsvFileStorePath"
+					value="${Globals.File}/upload/rsv/" />
+
+			</map>
 		</property>
 	</bean>
 </beans>	
